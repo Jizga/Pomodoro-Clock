@@ -12,11 +12,17 @@ function App() {
     if (e === "breaks") {
       setBreaks(breaks + 1);
     }
+    if (e === "sessions") {
+      setSessions(sessions + 1);
+    }
   };
 
   const decrement = (e) => {
-    if (e === "breaks") {
+    if (e === "breaks" && breaks > 1) {
       setBreaks(breaks - 1);
+    }
+    if (e === "sessions" && sessions > 1) {
+      setSessions(sessions - 1);
     }
   };
 
@@ -26,12 +32,18 @@ function App() {
       <div className="controllers">
         <Controller
           id="break-label"
-          title="Breaks Length"
+          title="Break Length"
           size={breaks}
           increment={() => increment("breaks")}
           decrement={() => decrement("breaks")}
         />
-        <Controller />
+        <Controller
+          id="session-label"
+          title="Session Length"
+          size={sessions}
+          increment={() => increment("sessions")}
+          decrement={() => decrement("sessions")}
+        />
       </div>
       <div className="display">
         <Display />
