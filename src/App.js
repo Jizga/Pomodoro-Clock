@@ -7,6 +7,8 @@ import "./App.css";
 function App() {
   const [breaks, setBreaks] = useState(5);
   const [sessions, setSessions] = useState(25);
+  const [timeH, setTimeH] = useState(sessions);
+  const [timeMin, setTimeMin] = useState('00');
 
   const increment = (e) => {
     if (e === "breaks") {
@@ -14,6 +16,8 @@ function App() {
     }
     if (e === "sessions") {
       setSessions(sessions + 1);
+      setTimeH(timeH + 1);
+      setTimeMin('00');
     }
   };
 
@@ -23,6 +27,8 @@ function App() {
     }
     if (e === "sessions" && sessions > 1) {
       setSessions(sessions - 1);
+      setTimeH(timeH - 1);
+      setTimeMin('00');
     }
   };
 
@@ -46,7 +52,7 @@ function App() {
         />
       </div>
       <div className="display">
-        <Display />
+        <Display clockTimeH={timeH} clockTimeMin={timeMin} />
       </div>
       <div className="buttons">
         <Buttons />
