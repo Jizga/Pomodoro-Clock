@@ -1,6 +1,6 @@
 import React from "react";
-import Display from "./Components/Display";
 import Controller from "./Components/Controller";
+import Display from "./Components/Display";
 import Buttons from "./Components/Buttons";
 import "./App.css";
 
