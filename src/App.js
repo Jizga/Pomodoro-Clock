@@ -88,7 +88,13 @@ function App() {
       setTimeMin(59);
       setTimeH(timeH - 1);
     }
-  });
+    if (timeMin === 0 && timeH === 0 && isSession) {
+      setIsSession(false);
+      setCurrentState("Breaks");
+      setTimeH(breaks);
+      setTimeMin(0);
+    }
+  }, [timeMin, timeH, isSession, breaks, currentState]);
 
   return (
     <div className="App">
