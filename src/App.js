@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Controller from "./Components/Controller";
 import Display from "./Components/Display";
 import Buttons from "./Components/Buttons";
+import MarioBross from "./sound/Hongo Mario Bross.wav";
 import "./App.css";
 
 function App() {
@@ -83,6 +84,11 @@ function App() {
     setTimeMin(0);
   };
 
+  const playSound = () => {
+    const sound = new Audio(MarioBross);
+    sound.play();
+  };
+
   useEffect(() => {
     if (timeMin < 0) {
       setTimeMin(59);
@@ -93,12 +99,14 @@ function App() {
       setCurrentState("Breaks");
       setTimeH(breaks);
       setTimeMin(0);
+      playSound();
     }
     if (timeMin === 0 && timeH === 0 && !isSession) {
       setIsSession(true);
       setCurrentState("Session");
       setTimeH(sessions);
       setTimeMin(0);
+      playSound();
     }
   }, [timeMin, timeH, isSession, currentState, breaks, sessions]);
 
