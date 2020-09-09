@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
 
 export default function Buttons(props) {
-    return (
-        <div className="btns">
-            <button>PLAY</button>
-            <button>PAUSE</button>
-            <button>REBOOT</button>
-        </div>
-    )
+  return (
+    <div className="btns">
+      <div id="start_stop">
+        <button>PLAY</button>
+        <button>PAUSE</button>
+      </div>
+      <button id="reset">REBOOT</button>
+    </div>
+  );
 }

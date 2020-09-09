@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>My Pomodoro Clock</h1>
+      <h1>Pomodoro Clock</h1>
       <div className="controllers">
         <Controller
           id="break-label"
@@ -52,7 +52,7 @@ function App() {
         />
       </div>
       <div className="display">
-        <Display clockTimeH={timeH} clockTimeMin={timeMin} />
+        <Display title="Session" clockTimeH={timeH} clockTimeMin={timeMin} />
       </div>
       <div className="buttons">
         <Buttons />

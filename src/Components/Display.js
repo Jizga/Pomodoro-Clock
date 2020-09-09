@@ -13,7 +13,8 @@ export default function Display(props) {
 
   return (
     <div className="screen">
-      <h2>
+      <h3 id="timer-label">{props.title}</h3>
+      <h2 id="time-left">
         {hours} : {minutes}
       </h2>
     </div>
