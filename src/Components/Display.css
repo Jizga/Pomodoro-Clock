@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
+
+.screen {
+  background-color: crimson;
+  padding: 60px;
+  margin: 20px;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background-position: center;
+  color: whitesmoke;
+  flex: center;
+}
+
+h3 {
+  font-family: "Orbitron", sans-serif;
+}
+
+h2 {
+  font-family: "Black Ops One", cursive;
+}

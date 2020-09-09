@@ -112,7 +112,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Pomodoro Clock</h1>
       <div className="controllers">
         <Controller
           id="break-label"
@@ -139,6 +138,7 @@ function App() {
           reboot={() => reboot()}
         />
       </div>
+      <footer>@by Jizga</footer>
     </div>
   );
 }
