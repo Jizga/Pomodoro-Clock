@@ -10,7 +10,8 @@
   height: 150px;
   background-position: center;
   color: whitesmoke;
-  flex: center;
+  border: solid 5px rgba(165, 34, 34, 0.966);
+  
 }
 
 h3 {

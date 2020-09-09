@@ -10,4 +10,26 @@ body {
   justify-content: center;
 }
 
+.App {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  row-gap: 50px;
+}
 
+#break-label {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#session-label {
+  grid-column: 1;
+  grid-row: 2 / 3;
+}
+
+footer {
+  margin-top: 100px;
+  margin-bottom: 1rem;
+  font-size: 15px;
+  color: rgb(149, 156, 156);
+}
