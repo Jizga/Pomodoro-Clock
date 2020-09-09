@@ -83,6 +83,13 @@ function App() {
     setTimeMin(0);
   };
 
+  useEffect(() => {
+    if (timeMin < 0) {
+      setTimeMin(59);
+      setTimeH(timeH - 1);
+    }
+  });
+
   return (
     <div className="App">
       <h1>Pomodoro Clock</h1>
