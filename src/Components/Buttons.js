@@ -4,10 +4,12 @@ export default function Buttons(props) {
   return (
     <div className="btns">
       <div id="start_stop">
-        <button>PLAY</button>
-        <button>PAUSE</button>
+        <button onClick={props.play}>PLAY</button>
+        <button onClick={props.pause}>PAUSE</button>
       </div>
-      <button id="reset">REBOOT</button>
+      <button id="reset" onClick={props.reboot}>
+        REBOOT
+      </button>
     </div>
   );
 }

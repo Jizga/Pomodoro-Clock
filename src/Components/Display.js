@@ -2,12 +2,12 @@ import React from "react";
 
 export default function Display(props) {
   const hours =
-    props.clockTimeH.toString().lenght <= 1
+    props.clockTimeH.toString().length <= 1
       ? "0" + props.clockTimeH
       : props.clockTimeH;
 
   const minutes =
-    props.clockTimeMin.toString().lenght <= 1
+    props.clockTimeMin.toString().length <= 1
       ? "0" + props.clockTimeMin
       : props.clockTimeMin;
 

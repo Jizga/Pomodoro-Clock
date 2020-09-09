@@ -8,28 +8,54 @@ function App() {
   const [breaks, setBreaks] = useState(5);
   const [sessions, setSessions] = useState(25);
   const [timeH, setTimeH] = useState(sessions);
-  const [timeMin, setTimeMin] = useState('00');
+  const [timeMin, setTimeMin] = useState(0);
+  const [isOn, setIsOn] = useState(false);
 
   const increment = (e) => {
-    if (e === "breaks") {
-      setBreaks(breaks + 1);
-    }
-    if (e === "sessions") {
-      setSessions(sessions + 1);
-      setTimeH(timeH + 1);
-      setTimeMin('00');
+    if (!isOn) {
+      if (e === "sessions") {
+        setSessions(sessions + 1);
+        setTimeH(timeH + 1);
+        setTimeMin(0);
+      }
+      if (e === "breaks") {
+        setBreaks(breaks + 1);
+      }
     }
   };
 
   const decrement = (e) => {
-    if (e === "breaks" && breaks > 1) {
-      setBreaks(breaks - 1);
+    if (!isOn) {
+      if (e === "sessions" && sessions > 1) {
+        setSessions(sessions - 1);
+        setTimeH(timeH - 1);
+        setTimeMin(0);
+      }
+      if (e === "breaks" && breaks > 1) {
+        setBreaks(breaks - 1);
+      }
     }
-    if (e === "sessions" && sessions > 1) {
-      setSessions(sessions - 1);
-      setTimeH(timeH - 1);
-      setTimeMin('00');
-    }
+  };
+
+  const play = () => {
+    setIsOn(true);
+    console.log('start')
+  };
+
+  
+
+  const pause = () => {
+    setIsOn(false);
+    console.log('stop')
+  };
+
+  const reboot = () => {
+    setIsOn(false);
+    setSessions(25);
+    setBreaks(5);
+    setTimeH(25);
+    setTimeMin(0);
+    console.log('vuelta a empezar')
   };
 
   return (
@@ -55,7 +81,7 @@ function App() {
         <Display title="Session" clockTimeH={timeH} clockTimeMin={timeMin} />
       </div>
       <div className="buttons">
-        <Buttons />
+        <Buttons play={() => play()} pause={() => pause()} reboot={() => reboot()} />
       </div>
     </div>
   );
