@@ -5,6 +5,15 @@ import Buttons from "./Components/Buttons";
 import MarioBross from "./sound/Hongo Mario Bross.wav";
 import "./App.css";
 
+const colors_API = [
+  "#305956 ",
+  "#633013  ",
+  "#183801   ",
+  "#013829  ",
+  "#011138  ",
+  "#3E014B  ",
+];
+
 function App() {
   const [breaks, setBreaks] = useState(5);
   const [sessions, setSessions] = useState(25);
@@ -13,6 +22,7 @@ function App() {
   const [isOn, setIsOn] = useState(false);
   const [isSession, setIsSession] = useState(true);
   const [currentState, setCurrentState] = useState("Session");
+  const [color, setColor] = useState("");
 
   const useInterval = (callback, delay) => {
     const intervalId = useRef(null);
@@ -100,6 +110,7 @@ function App() {
       setTimeH(breaks);
       setTimeMin(0);
       playSound();
+      setColor(colors_API[Math.floor(Math.random() * 5)]);
     }
     if (timeMin === 0 && timeH === 0 && !isSession) {
       setIsSession(true);
@@ -107,8 +118,9 @@ function App() {
       setTimeH(sessions);
       setTimeMin(0);
       playSound();
+      setColor(colors_API[Math.floor(Math.random() * 5)]);
     }
-  }, [timeMin, timeH, isSession, currentState, breaks, sessions]);
+  }, [timeMin, timeH, isSession, currentState, breaks, sessions, color]);
 
   return (
     <div className="App">
@@ -129,7 +141,12 @@ function App() {
         />
       </div>
       <div className="display">
-        <Display title="Session" clockTimeH={timeH} clockTimeMin={timeMin} />
+        <Display
+          color={color}
+          title="Session"
+          clockTimeH={timeH}
+          clockTimeMin={timeMin}
+        />
       </div>
       <div className="buttons">
         <Buttons

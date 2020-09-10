@@ -13,7 +13,7 @@ export default function Display(props) {
       : props.clockTimeMin;
 
   return (
-    <div className="screen">
+    <div className="screen" style={{ backgroundColor: props.color }}>
       <h3 id="timer-label">{props.title}</h3>
       <h2 id="time-left">
         {hours} : {minutes}

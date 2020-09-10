@@ -3,49 +3,53 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  row-gap: 50px;
-  margin: 50px;
+  background-color: rgba(224, 223, 223, 0.835);
 }
 
 body {
-  background-color: rgba(224, 223, 223, 0.835);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-.controllers {
-  display: grid;
-  margin: 20px;
+.controller{
+  margin: 60px;
 }
 
-.controllers #break-label {
+.controller #break-label {
   grid-column: 1;
   grid-row: 1;
-  margin-bottom: 20px;
+  
 }
 
-.controllers #session-label {
+.controller #session-label {
   grid-column: 3;
   grid-row: 2;
 }
 
 .display {
-  grid-column: 2 / 3;
+  grid-column: 2;
   grid-row: 1 / 3;
+  margin-top: 40px;
 }
 
 .buttons {
-  grid-column: 3;
+  grid-column: 3 / 4;
   grid-row: 1 / 3;
+  width: 40px;
+  height: 40px;
+  margin-top: 140px;
+  margin-left: 40px;
 }
 
 footer {
   margin-top: 100px;
   margin-bottom: 1rem;
   font-size: 15px;
-  color: rgb(149, 156, 156);
+  color: rgb(214, 218, 218);
   grid-column: 2;
   grid-row: 2;
+  margin-top: 80px;
 }

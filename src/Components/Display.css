@@ -4,14 +4,11 @@
 .screen {
   background-color: crimson;
   padding: 60px;
-  margin: 20px;
-  border-radius: 50%;
   width: 150px;
-  height: 150px;
+  height: 100vh;
   background-position: center;
   color: whitesmoke;
-  border: solid 5px rgba(165, 34, 34, 0.966);
-  
+  border-radius: 20px;
 }
 
 h3 {
